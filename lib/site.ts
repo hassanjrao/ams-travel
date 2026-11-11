@@ -2,7 +2,8 @@
 // Branch names and addresses are translated in the dictionaries (contact.branches), in this same order.
 export const site = {
   name: "AMS Global Travel & Tours",
-  url: "https://amsglobal.pk",
+  // The final domain: Vercel redirects the bare domain to www, so canonicals and previews must use www.
+  url: "https://www.amsglobal.pk",
   // Default WhatsApp (head office) for buttons that aren't tied to a branch.
   whatsapp: "923001338010",
   email: "info@amsglobal.pk",

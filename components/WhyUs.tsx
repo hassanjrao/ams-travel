@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { BadgeCheck, Building2, Layers, MessageCircle } from "lucide-react";
+import { Award, Building2, Layers, MessageCircle } from "lucide-react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import SectionHeading from "./SectionHeading";
 import flights from "@/public/images/flights.webp";
 
-const icons = [Building2, Layers, BadgeCheck, MessageCircle];
+const icons = [Building2, Layers, Award, MessageCircle];
 
 export default function WhyUs({ t }: { t: Dictionary["why"] }) {
   return (

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       url: `/${lang}`,
       siteName: site.name,
       locale: lang === "ur" ? "ur_PK" : "en_PK",
-      images: [{ url: "/images/hero-kaaba.webp", width: 1200, height: 1800 }],
+      images: [{ url: "/images/hero-pilgrim.webp", width: 1200, height: 1600 }],
       type: "website",
     },
   };

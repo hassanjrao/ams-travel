@@ -1,9 +1,9 @@
-import { BedDouble, Bus, FileCheck2, Landmark, Palmtree, Plane } from "lucide-react";
+import { BedDouble, Compass, FileCheck2, Landmark, Mountain, Plane } from "lucide-react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import SectionHeading from "./SectionHeading";
 
 // Same order as dictionary services.items.
-const icons = [Landmark, Plane, FileCheck2, BedDouble, Bus, Palmtree];
+const icons = [Landmark, Plane, FileCheck2, BedDouble, Compass, Mountain];
 
 export default function Services({ t }: { t: Dictionary["services"] }) {
   return (

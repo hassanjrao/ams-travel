@@ -13,7 +13,19 @@ import office from "@/public/images/gallery-office-1.webp";
 import departure2 from "@/public/images/gallery-departure-2.webp";
 import hotel from "@/public/images/gallery-hotel.webp";
 import airport from "@/public/images/gallery-airport.webp";
+import customers1 from "@/public/images/customers-1.webp";
 import customers2 from "@/public/images/customers-2.webp";
+import madinahPilgrim from "@/public/images/madinah-pilgrim-large.webp";
+import kaabaNight2 from "@/public/images/kaaba-night-2.webp";
+import pilgrim2 from "@/public/images/pilgrim-kaaba-2.webp";
+import departure3 from "@/public/images/gallery-departure-3.webp";
+import departure4 from "@/public/images/gallery-departure-4.webp";
+import departure5 from "@/public/images/gallery-departure-5.webp";
+import departure6 from "@/public/images/gallery-departure-6.webp";
+import group from "@/public/images/gallery-group.webp";
+import office2 from "@/public/images/gallery-office-2.webp";
+import guest from "@/public/images/gallery-guest.webp";
+import khanewal from "@/public/images/khanewal-branch.webp";
 
 // Real photos of our travellers, cross-faded behind the headline (timing in .hero-slide).
 const slides = [departure1, kaabaNight, office, departure2];
@@ -21,12 +33,26 @@ const slides = [departure1, kaabaNight, office, departure2];
 // Framed carousel; captions come from the dictionary's hero.slides, in this order.
 const carousel = [
   { src: pilgrim },
-  { src: madinahNight },
   { src: kaabaNight, position: "75% 50%" },
+  { src: madinahNight },
+  { src: madinahPilgrim },
+  { src: kaabaNight2, position: "75% 50%" },
+  { src: pilgrim2 },
   { src: hotel },
   { src: airport },
+  { src: departure1 },
   { src: departure2 },
+  { src: departure3 },
+  { src: departure4 },
+  { src: departure5 },
+  { src: departure6 },
+  { src: group },
+  { src: office },
+  { src: office2 },
+  { src: guest },
+  { src: customers1 },
   { src: customers2 },
+  { src: khanewal, position: "50% 20%" },
 ];
 
 export default function Hero({ t, waText }: { t: Dictionary["hero"]; waText: string }) {

@@ -7,13 +7,28 @@ import Lightbox, { type CarouselLabels, type Slide, useSwipe } from "./Lightbox"
 
 const AUTOPLAY_MS = 5000;
 
+// The slide and its two neighbours: the only ones worth downloading yet.
+const around = (i: number, count: number) => [i, (i + 1) % count, (i - 1 + count) % count];
+
 export default function HeroCarousel({ slides, labels }: { slides: Slide[]; labels: CarouselLabels }) {
+  const count = slides.length;
   const [index, setIndex] = useState(0);
+  // Slides whose image has been mounted; kept once mounted so the crossfade back never re-fetches.
+  const [mounted, setMounted] = useState<Set<number>>(() => new Set(around(0, count)));
   const [hovered, setHovered] = useState(false);
   const [viewing, setViewing] = useState<number | null>(null);
-  const count = slides.length;
 
-  const step = useCallback((delta: number) => setIndex((i) => (i + delta + count) % count), [count]);
+  const goTo = useCallback(
+    (next: number) => {
+      setIndex(next);
+      setMounted((prev) => {
+        const wanted = around(next, count);
+        return wanted.every((i) => prev.has(i)) ? prev : new Set([...prev, ...wanted]);
+      });
+    },
+    [count],
+  );
+  const step = useCallback((delta: number) => goTo((index + delta + count) % count), [goTo, index, count]);
   const stepViewer = useCallback(
     (delta: number) => setViewing((i) => (i === null ? i : (i + delta + count) % count)),
     [count],
@@ -27,7 +42,7 @@ export default function HeroCarousel({ slides, labels }: { slides: Slide[]; labe
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setTimeout(() => step(1), AUTOPLAY_MS);
     return () => window.clearTimeout(id);
-  }, [hovered, viewing, index, step]);
+  }, [hovered, viewing, step]);
 
   const navButton =
     "absolute top-1/2 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-ink shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white";
@@ -50,16 +65,18 @@ export default function HeroCarousel({ slides, labels }: { slides: Slide[]; labe
             inert={i !== index}
             className={`absolute inset-0 cursor-zoom-in transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
           >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              preload={i === 0}
-              placeholder="blur"
-              sizes="(min-width: 1024px) 30vw, 90vw"
-              className="object-cover transition duration-700 group-hover:scale-[1.03]"
-              style={slide.position ? { objectPosition: slide.position } : undefined}
-            />
+            {mounted.has(i) && (
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                preload={i === 0}
+                placeholder="blur"
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                style={slide.position ? { objectPosition: slide.position } : undefined}
+              />
+            )}
           </button>
         ))}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-night/20" />
@@ -75,18 +92,13 @@ export default function HeroCarousel({ slides, labels }: { slides: Slide[]; labe
           <ChevronRight className="size-5 rtl:rotate-180" />
         </button>
 
-        <div className="absolute top-6 start-6 z-10 flex gap-1.5">
-          {slides.map((slide, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setIndex(i)}
-              aria-label={slide.alt}
-              aria-current={i === index}
-              className={`h-2 rounded-full transition-all ${i === index ? "w-6 bg-gold-light" : "w-2 bg-white/60 hover:bg-white"}`}
-            />
-          ))}
-        </div>
+        <span
+          className="absolute top-6 start-6 z-10 rounded-full bg-black/45 px-3 py-1 text-xs font-bold tabular-nums text-white backdrop-blur"
+          dir="ltr"
+          aria-live="polite"
+        >
+          {index + 1} / {count}
+        </span>
       </div>
 
       {viewing !== null && (

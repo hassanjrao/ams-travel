@@ -7,6 +7,7 @@ export const site = {
   whatsapp: "923001338010",
   email: "info@amsglobal.pk",
   supportEmail: "support@amsglobal.pk",
+  developer: { name: "Hassan Javaid Rao", whatsapp: "923035209409" },
   branches: [
     {
       id: "multan",

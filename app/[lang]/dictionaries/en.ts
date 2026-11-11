@@ -141,6 +141,7 @@ const en = {
     servicesTitle: "Services",
     contactTitle: "Our offices",
     rights: "All rights reserved.",
+    developedBy: "Developed by",
   },
 };
 

@@ -143,6 +143,7 @@ const ur: Dictionary = {
     servicesTitle: "خدمات",
     contactTitle: "ہمارے دفاتر",
     rights: "جملہ حقوق محفوظ ہیں۔",
+    developedBy: "تیار کردہ:",
   },
 };
 

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
-import { site, telLink } from "@/lib/site";
+import { site, telLink, whatsappLink } from "@/lib/site";
+import { WhatsAppIcon } from "./icons";
 import logo from "@/public/images/logo.png";
 
 type Props = {
@@ -83,9 +84,22 @@ export default function Footer({ t, nav, services, branches }: Props) {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-6 text-sm sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>
             © {site.name}. {t.rights}
+          </p>
+          <p className="text-white/50">
+            {t.developedBy}{" "}
+            <a
+              href={whatsappLink(undefined, site.developer.whatsapp)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-semibold text-gold-light transition hover:text-white"
+              dir="ltr"
+            >
+              {site.developer.name}
+              <WhatsAppIcon className="size-3.5" />
+            </a>
           </p>
         </div>
       </div>

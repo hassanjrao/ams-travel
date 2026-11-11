@@ -65,7 +65,9 @@ const en = {
     eyebrow: "Popular packages",
     title: "Where would you like to go?",
     subtitle: "Every package is tailored to your dates and budget. Message us for current prices.",
-    enquiry: "Assalam o Alaikum, I would like details about the package:",
+    // WhatsApp message; {package} is replaced with the package title. English, then Roman Urdu.
+    enquiry:
+      "Assalam o Alaikum! I would like details about: {package}\nMujhe {package} ki tafseelat chahiye, meherbani kar ke rabta karein.",
     items: [
       { id: "umrah", title: "Umrah Packages", text: "Economy to premium, with hotels close to Masjid al-Haram.", tag: "Most popular" },
       { id: "hajj", title: "Hajj & Ziyarat", text: "Hajj arrangements and Madinah ziyarat, taken care of end to end.", tag: "Spiritual" },
@@ -132,8 +134,10 @@ const en = {
         address: "Opp. NADRA Office, Main City Road, Allama Iqbal Town, Khanewal",
       },
     ],
-    whatsappIntro: "Assalam o Alaikum AMS Global, I'd like to enquire about a trip.",
-    labels: { name: "Name", phone: "Phone", service: "Service", message: "Details" },
+    // English, then Roman Urdu.
+    whatsappIntro:
+      "Assalam o Alaikum AMS Global, I'd like to enquire about a trip.\nMujhe safar ke baare mein maloomat chahiye.",
+    labels: { name: "Name (Naam)", phone: "Phone", service: "Service (Khidmat)", message: "Details (Tafseelat)" },
   },
   footer: {
     tagline: "Umrah, Hajj, ziyarat, air tickets, visas and tours, arranged with care from Multan and Khanewal.",

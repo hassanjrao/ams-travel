@@ -60,7 +60,7 @@ export default function Packages({ t, actions, branches }: Props) {
                 <div className="p-7">
                   <h3 className="font-display text-3xl font-semibold text-white">{pkg.title}</h3>
                   <p className="mt-2 text-white/80">{pkg.text}</p>
-                  <BranchActions branches={branches} actions={actions} text={`${t.enquiry} ${pkg.title}`} />
+                  <BranchActions branches={branches} actions={actions} text={t.enquiry.split("{package}").join(pkg.title)} />
                 </div>
               </article>
             );

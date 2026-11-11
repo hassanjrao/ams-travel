@@ -29,7 +29,17 @@ const en = {
     primary: "Plan my trip",
     secondary: "WhatsApp us",
     badges: ["Umrah & Hajj packages", "Air tickets worldwide", "Visit visas"],
-    imageAlt: "One of our pilgrims in ihram at the Kaaba, Masjid al-Haram",
+    // Hero carousel photos, in the order listed in components/Hero.tsx.
+    slides: [
+      "One of our pilgrims in ihram at the Kaaba, Masjid al-Haram",
+      "A pilgrim praying at Masjid an-Nabawi, Madinah",
+      "Our pilgrims at the Kaaba at night",
+      "A pilgrim in ihram at his hotel",
+      "A traveller on his way to Umrah",
+      "Pilgrims with garlands before their flight",
+      "Thank you for travelling with us",
+    ],
+    carousel: { prev: "Previous photo", next: "Next photo", close: "Close", view: "View photo" },
     realPhotos: "Real photos of our pilgrims and travellers",
     cardTitle: "Umrah packages",
     cardText: "Visa, flights, hotels & transport",

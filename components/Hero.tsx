@@ -3,15 +3,31 @@ import { ArrowRight, Camera, CheckCircle2, Plane } from "lucide-react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { whatsappLink } from "@/lib/site";
 import { WhatsAppIcon } from "./icons";
+import HeroCarousel from "./HeroCarousel";
 import pilgrim from "@/public/images/hero-pilgrim.webp";
 import madinah from "@/public/images/madinah-pilgrim.webp";
+import madinahNight from "@/public/images/madinah-night.webp";
 import departure1 from "@/public/images/gallery-departure-1.webp";
 import kaabaNight from "@/public/images/umrah-kaaba-night.webp";
 import office from "@/public/images/gallery-office-1.webp";
 import departure2 from "@/public/images/gallery-departure-2.webp";
+import hotel from "@/public/images/gallery-hotel.webp";
+import airport from "@/public/images/gallery-airport.webp";
+import customers2 from "@/public/images/customers-2.webp";
 
 // Real photos of our travellers, cross-faded behind the headline (timing in .hero-slide).
 const slides = [departure1, kaabaNight, office, departure2];
+
+// Framed carousel; captions come from the dictionary's hero.slides, in this order.
+const carousel = [
+  { src: pilgrim },
+  { src: madinahNight },
+  { src: kaabaNight, position: "75% 50%" },
+  { src: hotel },
+  { src: airport },
+  { src: departure2 },
+  { src: customers2 },
+];
 
 export default function Hero({ t, waText }: { t: Dictionary["hero"]; waText: string }) {
   return (
@@ -82,20 +98,9 @@ export default function Hero({ t, waText }: { t: Dictionary["hero"]; waText: str
         </div>
 
         <div className="relative mx-auto w-full max-w-sm animate-rise [animation-delay:150ms] lg:max-w-md">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-[2.5rem] shadow-2xl shadow-black/50 ring-8 ring-white/15">
-            <Image
-              src={pilgrim}
-              alt={t.imageAlt}
-              fill
-              preload
-              placeholder="blur"
-              sizes="(min-width: 1024px) 30vw, 90vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
-          </div>
+          <HeroCarousel slides={carousel.map((s, i) => ({ ...s, alt: t.slides[i] }))} labels={t.carousel} />
 
-          <div className="animate-float absolute -bottom-6 start-[-1rem] flex items-center gap-3 rounded-2xl bg-white p-3 pe-5 shadow-xl sm:start-[-2rem]">
+          <div className="animate-float pointer-events-none absolute -bottom-6 start-[-1rem] flex items-center gap-3 rounded-2xl bg-white p-3 pe-5 shadow-xl sm:start-[-2rem]">
             <Image src={madinah} alt="" className="size-14 rounded-xl object-cover" sizes="56px" />
             <div>
               <p className="font-display text-lg font-semibold leading-tight text-ink">{t.cardTitle}</p>

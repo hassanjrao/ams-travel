@@ -19,7 +19,7 @@ export const site = {
     {
       id: "khanewal",
       mapQuery: "NADRA Office, Allama Iqbal Town, Khanewal, Pakistan",
-      phones: ["0302-2888010", "0300-2558010"],
+      phones: ["0302-2888010"],
       whatsapp: "923022888010",
     },
   ],

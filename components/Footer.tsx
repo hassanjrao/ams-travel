@@ -15,6 +15,7 @@ type Props = {
 export default function Footer({ t, nav, services, branches }: Props) {
   const links = [
     { href: "#home", label: nav.home },
+    { href: "#umrah", label: nav.umrah },
     { href: "#services", label: nav.services },
     { href: "#about", label: nav.about },
     { href: "#packages", label: nav.packages },

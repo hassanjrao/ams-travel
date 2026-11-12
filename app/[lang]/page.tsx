@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Packages from "@/components/Packages";
 import Services from "@/components/Services";
+import UmrahPackages from "@/components/UmrahPackages";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhyUs from "@/components/WhyUs";
 import { hasLocale, site } from "@/lib/site";
@@ -48,6 +49,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <main>
         <Hero t={dict.hero} waText={dict.contact.whatsappIntro} />
         <Services t={dict.services} />
+        <UmrahPackages lang={lang} t={dict.umrah} enquiry={dict.packages.enquiry} actions={dict.actions} branches={branches} />
         <About t={dict.about} />
         <Packages t={dict.packages} actions={dict.actions} branches={branches} />
         <WhyUs t={dict.why} />

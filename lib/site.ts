@@ -12,7 +12,7 @@ export const site = {
   branches: [
     {
       id: "multan",
-      mapQuery: "Peace & Peace Plaza, Chungi No. 6, Bosan Road, Multan, Pakistan",
+      mapQuery: "Pace N Pace Plaza, Chungi No. 6, Bosan Road, Multan, Pakistan",
       phones: ["0300-1338010", "0325-2888010"],
       whatsapp: "923001338010",
     },

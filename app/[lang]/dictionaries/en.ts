@@ -6,6 +6,7 @@ const en = {
   },
   nav: {
     home: "Home",
+    umrah: "Umrah",
     services: "Services",
     about: "About",
     packages: "Packages",
@@ -58,6 +59,36 @@ const en = {
     cardTitle: "Umrah packages",
     cardText: "Visa, flights, hotels & transport",
     cardTag: "Since 2019",
+  },
+  // Prices and hotels are in lib/umrah.ts.
+  umrah: {
+    eyebrow: "Umrah 1448 AH",
+    title: "This season's Umrah packages",
+    subtitle: "Prices in Pakistani rupees by room type. Choose a package and contact the branch nearest to you.",
+    package: "Package {n}",
+    makkah: "Makkah",
+    madinah: "Madinah",
+    fromHaram: "{d} m from the Haram",
+    fromNabawi: "{d} m from Masjid an-Nabawi",
+    shuttle: "Shuttle service",
+    days: "{days} days ({split})",
+    rooms: { sharing: "Sharing", quad: "Quad", triple: "Triple", double: "Double" },
+    offer: {
+      badge: "Special offer · November & December 2026",
+      title: "Umrah with flights",
+      flights: "Return flights with {airline}",
+      route: "Multan – Jeddah – Multan",
+    },
+    land: {
+      title: "Hotel, visa & transport packages",
+      includesLabel: "Includes",
+      includes: ["Hotel", "Visa", "Transport"],
+      bookingTill: "Booking till {date}",
+      checkOut: "Check-out {date}",
+      advance: "100% advance payment",
+      duration: "Duration",
+      enquiry: "Umrah hotel, visa & transport",
+    },
   },
   services: {
     eyebrow: "What we do",
@@ -149,7 +180,7 @@ const en = {
         name: "Head Office",
         city: "Multan",
         person: "Rao Arif Sajjad",
-        address: "3rd Floor, Peace & Peace Plaza, Chungi No. 6, Bosan Road, Multan",
+        address: "3rd Floor, Pace N Pace Plaza, Chungi No. 6, Bosan Road, Multan",
       },
       {
         name: "Khanewal Branch",

@@ -65,6 +65,16 @@ export default function HeroCarousel({ slides, labels }: { slides: Slide[]; labe
             inert={i !== index}
             className={`absolute inset-0 cursor-zoom-in transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
           >
+            {mounted.has(i) && slide.contain && (
+              // Blurred copy of the same file fills the frame behind a flyer shown whole.
+              <Image
+                src={slide.src}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="scale-110 object-cover opacity-60 blur-2xl"
+              />
+            )}
             {mounted.has(i) && (
               <Image
                 src={slide.src}
@@ -73,7 +83,7 @@ export default function HeroCarousel({ slides, labels }: { slides: Slide[]; labe
                 preload={i === 0}
                 placeholder="blur"
                 sizes="(min-width: 1024px) 30vw, 90vw"
-                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                className={`transition duration-700 group-hover:scale-[1.03] ${slide.contain ? "object-contain" : "object-cover"}`}
                 style={slide.position ? { objectPosition: slide.position } : undefined}
               />
             )}

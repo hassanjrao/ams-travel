@@ -5,7 +5,8 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-export type Slide = { src: StaticImageData; alt: string; position?: string };
+// contain: show the whole image in the carousel instead of cropping it (flyers with text).
+export type Slide = { src: StaticImageData; alt: string; position?: string; contain?: boolean };
 export type CarouselLabels = { prev: string; next: string; close: string; view: string };
 
 const isRtl = () => document.documentElement.dir === "rtl";

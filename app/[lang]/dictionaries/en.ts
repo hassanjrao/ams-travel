@@ -32,6 +32,11 @@ const en = {
     badges: ["Umrah & Hajj packages", "Air tickets worldwide", "Visit visas"],
     // Hero carousel photos, in the order listed in components/Hero.tsx.
     slides: [
+      "Special Umrah offer with AirSial, 21 days: Masarat Masmarah and Abraj Diyafah",
+      "Special Umrah offer with AirSial, 21 days: Roza Sharook and Masarat Majd Taiba",
+      "Special Umrah offer with AirSial, 21 days: Masarat Khalil and Naseem Al Sharia",
+      "Special Umrah offer with AirSial, 21 days: Masarat Silver and Fundaq Kayan Taiba",
+      "Umrah packages 1448 AH: hotel, visa and transport price list",
       "One of our pilgrims in ihram at the Kaaba, Masjid al-Haram",
       "Our pilgrims at the Kaaba at night",
       "A pilgrim praying at Masjid an-Nabawi, Madinah",

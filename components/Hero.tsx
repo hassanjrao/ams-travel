@@ -26,12 +26,23 @@ import group from "@/public/images/gallery-group.webp";
 import office2 from "@/public/images/gallery-office-2.webp";
 import guest from "@/public/images/gallery-guest.webp";
 import khanewal from "@/public/images/khanewal-branch.webp";
+import flyerMasmarah from "@/public/images/flyer-offer-masmarah.webp";
+import flyerSharook from "@/public/images/flyer-offer-sharook.webp";
+import flyerKhalil from "@/public/images/flyer-offer-khalil.webp";
+import flyerSilver from "@/public/images/flyer-offer-silver.webp";
+import flyerPriceList from "@/public/images/flyer-umrah-price-list.webp";
 
 // Real photos of our travellers, cross-faded behind the headline (timing in .hero-slide).
 const slides = [departure1, kaabaNight, office, departure2];
 
 // Framed carousel; captions come from the dictionary's hero.slides, in this order.
+// This season's package flyers come first; they are shown whole, not cropped.
 const carousel = [
+  { src: flyerMasmarah, contain: true },
+  { src: flyerSharook, contain: true },
+  { src: flyerKhalil, contain: true },
+  { src: flyerSilver, contain: true },
+  { src: flyerPriceList, contain: true },
   { src: pilgrim },
   { src: kaabaNight, position: "75% 50%" },
   { src: madinahNight },

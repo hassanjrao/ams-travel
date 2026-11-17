@@ -15,6 +15,7 @@ const ur: Dictionary = {
     gallery: "مسافر",
     contact: "رابطہ",
     cta: "قیمت معلوم کریں",
+    agentLogin: "ایجنٹ لاگ ان",
     menu: "مینو",
     switchTo: "English",
   },
@@ -202,6 +203,9 @@ const ur: Dictionary = {
     contactTitle: "ہمارے دفاتر",
     rights: "جملہ حقوق محفوظ ہیں۔",
     developedBy: "تیار کردہ:",
+    portalTitle: "ٹریول ایجنٹس کے لیے",
+    portalText: "اے ایم ایس کی گروپ سیٹیں آن لائن بُک کریں: سیٹیں ہولڈ کریں، ادائیگی بھیجیں اور ہر بکنگ دیکھیں۔",
+    portalCta: "ایجنٹ پورٹل کھولیں",
   },
 };
 

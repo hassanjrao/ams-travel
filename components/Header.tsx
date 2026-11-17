@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Languages, Menu, X } from "lucide-react";
+import { Languages, LogIn, Menu, X } from "lucide-react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
-import type { Locale } from "@/lib/site";
+import { site, type Locale } from "@/lib/site";
 import TopBar from "./TopBar";
 import logo from "@/public/images/logo.png";
 
@@ -74,6 +74,13 @@ export default function Header({ lang, nav, actions, branches, waText }: Props) 
               {nav.switchTo}
             </Link>
             <a
+              href={site.portalUrl}
+              className="hidden items-center gap-1.5 rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-gold hover:bg-sand md:inline-flex"
+            >
+              <LogIn className="size-4" aria-hidden />
+              {nav.agentLogin}
+            </a>
+            <a
               href="#contact"
               className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gold-dark sm:inline-flex"
             >
@@ -103,6 +110,13 @@ export default function Header({ lang, nav, actions, branches, waText }: Props) 
                 {l.label}
               </a>
             ))}
+            <a
+              href={site.portalUrl}
+              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-gold/50 px-5 py-3 font-semibold text-ink"
+            >
+              <LogIn className="size-4" aria-hidden />
+              {nav.agentLogin}
+            </a>
             <a
               href="#contact"
               onClick={() => setOpen(false)}

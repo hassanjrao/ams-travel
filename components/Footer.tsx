@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone } from "lucide-react";
+import { LogIn, MapPin, Phone } from "lucide-react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { site, telLink, whatsappLink } from "@/lib/site";
 import { WhatsAppIcon } from "./icons";
@@ -34,6 +34,17 @@ export default function Footer({ t, nav, services, branches }: Props) {
           <a href={`mailto:${site.email}`} className="mt-4 inline-block font-semibold text-white transition hover:text-gold-light">
             {site.email}
           </a>
+          <div className="mt-6 max-w-xs rounded-2xl border border-gold/30 bg-white/5 p-4">
+            <p className="font-bold text-gold-light">{t.portalTitle}</p>
+            <p className="mt-1 text-sm leading-relaxed rtl:mt-2 rtl:leading-loose">{t.portalText}</p>
+            <a
+              href={site.portalUrl}
+              className="mt-3 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-night transition hover:bg-gold-light"
+            >
+              <LogIn className="size-4" aria-hidden />
+              {t.portalCta}
+            </a>
+          </div>
         </div>
 
         <div>
@@ -46,6 +57,11 @@ export default function Footer({ t, nav, services, branches }: Props) {
                 </a>
               </li>
             ))}
+            <li>
+              <a href={site.portalUrl} className="font-semibold text-gold-light transition hover:text-white">
+                {nav.agentLogin}
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -89,7 +105,7 @@ export default function Footer({ t, nav, services, branches }: Props) {
           <p>
             © {site.name}. {t.rights}
           </p>
-          <p className="text-white/50">
+          <p className="text-white/60">
             {t.developedBy}{" "}
             <a
               href={whatsappLink(undefined, site.developer.whatsapp)}

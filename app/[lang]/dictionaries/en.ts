@@ -13,6 +13,7 @@ const en = {
     gallery: "Travellers",
     contact: "Contact",
     cta: "Get a Quote",
+    agentLogin: "Agent Login",
     menu: "Menu",
     switchTo: "اردو",
   },
@@ -206,6 +207,9 @@ const en = {
     contactTitle: "Our offices",
     rights: "All rights reserved.",
     developedBy: "Developed by",
+    portalTitle: "For travel agents",
+    portalText: "Book AMS group seats online: hold seats, send payments and track every booking.",
+    portalCta: "Open agent portal",
   },
 };
 

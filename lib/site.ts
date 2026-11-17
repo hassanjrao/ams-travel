@@ -8,6 +8,8 @@ export const site = {
   whatsapp: "923001338010",
   email: "info@amsglobal.pk",
   supportEmail: "support@amsglobal.pk",
+  // The B2B agent portal (Laravel app on webhoster.pk), linked from the header and footer.
+  portalUrl: "https://portal.amsglobal.pk",
   developer: { name: "Hassan Javaid Rao", whatsapp: "923035209409" },
   branches: [
     {

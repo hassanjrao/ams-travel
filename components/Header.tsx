@@ -75,7 +75,7 @@ export default function Header({ lang, nav, actions, branches, waText }: Props) 
             </Link>
             <a
               href={site.portalUrl}
-              className="hidden items-center gap-1.5 rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-gold hover:bg-sand md:inline-flex"
+              className="agent-cta hidden items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-bold text-ink ring-1 ring-gold-dark/30 transition hover:-translate-y-px md:inline-flex"
             >
               <LogIn className="size-4" aria-hidden />
               {nav.agentLogin}
@@ -112,7 +112,7 @@ export default function Header({ lang, nav, actions, branches, waText }: Props) 
             ))}
             <a
               href={site.portalUrl}
-              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-gold/50 px-5 py-3 font-semibold text-ink"
+              className="agent-cta mt-2 flex items-center justify-center gap-2 rounded-full px-5 py-3 font-bold text-ink ring-1 ring-gold-dark/30"
             >
               <LogIn className="size-4" aria-hidden />
               {nav.agentLogin}
